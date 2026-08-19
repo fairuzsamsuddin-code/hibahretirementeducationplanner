@@ -347,8 +347,11 @@
     <header class="sticky top-4 z-50 px-4 sm:px-6 lg:px-8 transition-all duration-300">
         <div class="max-w-6xl mx-auto">
             <div class="bg-white/90 backdrop-blur-md shadow-[0_8px_30px_rgb(0,0,0,0.08)] rounded-full border border-gray-100 px-4 md:px-6 py-3 flex items-center justify-between">
-                <div class="flex-shrink-0 mr-4">
-                   <a href="#" class="text-xl font-bold tracking-tight" style="color: #8C1D40;">FS <span class="font-medium text-gray-500">Futura</span></a>
+                <div class="flex-shrink-0 mr-4 flex items-center gap-2">
+                   <a href="#" class="flex items-center gap-2">
+                       <img src="FS-logo.png" alt="FS Logo" class="h-8 w-auto object-contain">
+                       <span class="text-xl font-bold tracking-tight" style="color: #8C1D40;">FS <span class="font-medium text-gray-500">Futura</span></span>
+                   </a>
                 </div>
                 
                 <nav class="hidden lg:flex items-center space-x-1">
@@ -2850,7 +2853,10 @@
                         <div class="pdf-cover-page">
                             <div class="pdf-cover-deco-1"></div>
                             <div class="pdf-cover-deco-2"></div>
-                            <h1 class="pdf-cover-title">FS Futura</h1>
+                            <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 25px; position: relative; z-index: 10;">
+                                <img src="FS-logo.png" alt="FS Logo" style="height: 60px; width: auto; object-contain;">
+                                <h1 class="pdf-cover-title" style="margin-bottom: 0;">FS Futura</h1>
+                            </div>
                             <h2 class="pdf-cover-subtitle">Your Personal Financial Story</h2>
                             <div>
                                 <p class="pdf-cover-client-label">Prepared exclusively for</p>
@@ -2864,9 +2870,12 @@
                     const today = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric'});
                     return `
                         <div class="pdf-page" style="border: none; background: transparent;">
-                            <div class="pdf-header">
-                                <div class="logo">FS Futura</div>
-                                <div class="subtitle">Financial Plan Summary for ${data.clientName}</div>
+                            <div class="pdf-header" style="display: flex; flex-direction: column; align-items: center; justify-content: center; border-bottom: 2px solid #8C1D40; padding-bottom: 15px; margin-bottom: 25px;">
+                                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+                                    <img src="FS-logo.png" alt="FS Logo" style="height: 32px; width: auto;">
+                                    <div class="logo" style="border: none; padding: 0; margin: 0;">FS Futura</div>
+                                </div>
+                                <div class="subtitle" style="margin-top: 5px;">Financial Plan Summary for ${data.clientName}</div>
                                 <div class="subtitle" style="font-size: 12px;">Generated on: ${today}</div>
                             </div>
                         </div>`;
